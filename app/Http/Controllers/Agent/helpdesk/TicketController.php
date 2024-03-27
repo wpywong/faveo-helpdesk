@@ -2779,7 +2779,7 @@ class TicketController extends Controller
                             }
 
                             $due = '';
-                            if ($tickets->duedate != null) {
+                            if ($tickets->duedate != null && $tickets->status == 1) {
                                 $now = strtotime(\Carbon\Carbon::now()->tz(timezone()));
                                 $duedate = strtotime($tickets->duedate);
 
